@@ -105,4 +105,4 @@ client.on('message', async(message,args) => {
 app.get('/', function (req,res) { res.send("` Hunter Uptime` Pinglendi!") })
 
 app.listen(3000)
-client.login('TOKEN');
+client.login(process.env.token);
