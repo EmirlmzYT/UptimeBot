@@ -106,3 +106,7 @@ app.get('/', function (req,res) { res.send("` Roket Uptime` Pinglendi!") })
 
 app.listen(3000)
 client.login(process.env.token);
+
+client.on("ready", () => {
+  client.channels.cache.get('857812974806892545').join();//Hangi Ses Kanalın Gircekse o ses kanalının id sini gir
+  });
