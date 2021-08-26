@@ -72,11 +72,11 @@ client.on("message", message => {
   var spl = message.content.split(" ");
   if (spl[0] == ".yardım") {
     var link = spl[1];
-    message.channel.send(new Discord.MessageEmbed().setDescription('**.ekle <Link> ・ Belirttiğiniz Linki Sisteme Ekler.\n .göster ・ Aktif Tutulan Proje Sayısını Gösterir.\n .i ・ Botun İstatistiklerini Gösterir.\n \n .davet ・ Botun Ve Destek Sunucusunun Linklerini Atar.**').setFooter('Menü ' + message.author.username + ' Tarafından İstendi').setTimestamp().setAuthor(client.user.username, client.user.avatarURL({type: 'png'})).setThumbnail(message.author.avatarURL()));
+    message.channel.send(new Discord.MessageEmbed().setDescription('**`.ekle <Link>` ・ Belirttiğiniz Linki Sisteme Ekler.\n \n `.göster` ・ Aktif Tutulan Proje Sayısını Gösterir.\n \n `.i` ・ Botun İstatistiklerini Gösterir.\n \n `.davet` ・ Botun Ve Destek Sunucusunun Linklerini Atar.**').setFooter('Yardım Menüsü ' + message.author.username + ' Tarafından İstendi').setTimestamp().setAuthor(client.user.username, client.user.avatarURL({type: 'png'})).setThumbnail(message.author.avatarURL()));
 }});
 
 client.on('message', async(message) => {
-  if (message.content.toLowerCase() === 'u!davet') {
+  if (message.content.toLowerCase() === '.davet') {
     let DavetEmbed = new Discord.MessageEmbed()
       .setAuthor(message.author.username, message.author.avatarURL())
       .setDescription('**[Beni Sunucuna Ekle](https://discord.com/oauth2/authorize?client_id=880218593890021406&scope=bot&permissions=8)\n[Destek Sunucuma Katıl!](https://discord.gg/77wvvV2Fk5)**')
@@ -87,7 +87,7 @@ client.on('message', async(message) => {
 });
 
 client.on('message', async(message,args) => {
-  if (message.content.toLowerCase === '.istatistik' || message.content.toLowerCase() === 'u!i') {
+  if (message.content.toLowerCase === '.istatistik' || message.content.toLowerCase() === '.i') {
     const calismasuresi = moment.duration(client.uptime).format(" D [Gün], H [Saat], m [Dakika], s [Saniye]");
 
     let istatistik = new Discord.MessageEmbed()    
@@ -102,7 +102,7 @@ client.on('message', async(message,args) => {
   }
 });
 
-app.get('/', function (req,res) { res.send("` Hunter Uptime` Pinglendi!") })
+app.get('/', function (req,res) { res.send("` Roket Uptime` Pinglendi!") })
 
 app.listen(3000)
 client.login(process.env.token);
