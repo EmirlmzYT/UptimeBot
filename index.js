@@ -13,7 +13,7 @@ let app = express();
 
 client.on("ready", () => {
   console.log("Bot " + client.user.tag + " kullanıcı adıyla aktif!");
-  client.user.setActivity('u!yardım & u!ekle', { type: 'dnd' });
+  client.user.setActivity('.yardım & .ekle', { type: 'dnd' });
 });
 
 setInterval(() => {
@@ -39,7 +39,7 @@ client.on("ready", () => {
 client.on("message", message => {
   if (message.author.bot) return;
   var spl = message.content.split(" ");
-  if (spl[0] == "u!ekle") {
+  if (spl[0] == ".ekle") {
     var link = spl[1];
     fetch(link)
       .then(() => {
@@ -59,7 +59,7 @@ client.on("message", message => {
 client.on("message", message => {
   if (message.author.bot) return;
   var spl = message.content.split(" ");
-  if (spl[0] == "u!göster") {
+  if (spl[0] == ".göster") {
     var link = spl[1];
     let eklemissin = sdb.get(`uptimesayi_${message.author.id}`)
     if (eklemissin===null||eklemissin===undefined) {eklemissin=0};
@@ -72,7 +72,7 @@ client.on("message", message => {
   var spl = message.content.split(" ");
   if (spl[0] == ".yardım") {
     var link = spl[1];
-    message.channel.send(new Discord.MessageEmbed().setDescription('**u!ekle <Link> ・ Belirttiğiniz Linki Sisteme Ekler.\n u!göster ・ Aktif Tutulan Proje Sayısını Gösterir.\n u!i ・ Botun İstatistiklerini Gösterir.\n u!davet ・ Botun Ve Destek Sunucusunun Linklerini Atar.**').setFooter('Menü ' + message.author.username + ' Tarafından İstendi').setTimestamp().setAuthor(client.user.username, client.user.avatarURL({type: 'png'})).setThumbnail(message.author.avatarURL()));
+    message.channel.send(new Discord.MessageEmbed().setDescription('**.ekle <Link> ・ Belirttiğiniz Linki Sisteme Ekler.\n .göster ・ Aktif Tutulan Proje Sayısını Gösterir.\n .i ・ Botun İstatistiklerini Gösterir.\n \n .davet ・ Botun Ve Destek Sunucusunun Linklerini Atar.**').setFooter('Menü ' + message.author.username + ' Tarafından İstendi').setTimestamp().setAuthor(client.user.username, client.user.avatarURL({type: 'png'})).setThumbnail(message.author.avatarURL()));
 }});
 
 client.on('message', async(message) => {
