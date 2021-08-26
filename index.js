@@ -70,7 +70,7 @@ client.on("message", message => {
 client.on("message", message => {
   if (message.author.bot) return;
   var spl = message.content.split(" ");
-  if (spl[0] == "u!yardım") {
+  if (spl[0] == ".yardım") {
     var link = spl[1];
     message.channel.send(new Discord.MessageEmbed().setDescription('**u!ekle <Link> ・ Belirttiğiniz Linki Sisteme Ekler.\n u!göster ・ Aktif Tutulan Proje Sayısını Gösterir.\n u!i ・ Botun İstatistiklerini Gösterir.\n u!davet ・ Botun Ve Destek Sunucusunun Linklerini Atar.**').setFooter('Menü ' + message.author.username + ' Tarafından İstendi').setTimestamp().setAuthor(client.user.username, client.user.avatarURL({type: 'png'})).setThumbnail(message.author.avatarURL()));
 }});
@@ -79,7 +79,7 @@ client.on('message', async(message) => {
   if (message.content.toLowerCase() === 'u!davet') {
     let DavetEmbed = new Discord.MessageEmbed()
       .setAuthor(message.author.username, message.author.avatarURL())
-      .setDescription('**[Beni Sunucuna Ekle!](https://discord.com/oauth2/authorize?client_id=800117731432333332&scope=bot&permissions=40)\n[Destek Sunucuma Katıl!](https://discord.gg/7GK2m72fEW)**')
+      .setDescription('**[Beni Sunucuna Ekle](https://discord.com/oauth2/authorize?client_id=880218593890021406&scope=bot&permissions=8)\n[Destek Sunucuma Katıl!](https://discord.gg/77wvvV2Fk5)**')
       .setThumbnail(message.author.avatarURL())
       .setTimestamp()
     return message.channel.send(DavetEmbed);
