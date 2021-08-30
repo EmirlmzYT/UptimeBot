@@ -44,7 +44,7 @@ client.on("message", message => {
     fetch(link)
       .then(() => {
         let usayi = sdb.get(`uptimesayi_${message.author.id}`);
-        if (db.get("linkler").map(z => z.url).includes(link)) return message.channel.send(new Discord.MessageEmbed() .setAuthor(message.author.username, message.author.avatarURL({format: 'png'})) .setDescription(`**Bu Link Zaten \`Hunter ・ Uptime\` Tarafından 7/24 Aktif Tutulmakta!**`) .setThumbnail(message.author.avatarURL({type: 'png'})) .setTimestamp());
+        if (db.get("linkler").map(z => z.url).includes(link)) return message.channel.send(new Discord.MessageEmbed() .setAuthor(message.author.username, message.author.avatarURL({format: 'png'})) .setDescription(`**Bu Link Zaten \`Roket ・ Uptime\` Tarafından 7/24 Aktif Tutulmakta!**`) .setThumbnail(message.author.avatarURL({type: 'png'})) .setTimestamp());
         message.delete();
         message.channel.send(new Discord.MessageEmbed() .setAuthor(message.author.username, message.author.avatarURL({format: 'png'})) .setDescription(`**Projeniz Başarıyla Sisteme Eklendi!**`) .setThumbnail(message.author.avatarURL({type: 'png'})) .setTimestamp());
         db.push("linkler", { url: link, owner: message.author.id });
